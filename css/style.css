@@ -5,8 +5,9 @@
 
 .menu {
     height: 40px;
-    background: aqua;
-    padding-left: 350px;
+    background: aqua;  
+    padding-left: 170px;
+    transition: 0.2s;
 }
 
 .block1 {
@@ -66,4 +67,17 @@
         opacity:1;
 
     }
+}
+
+.content_all {
+    width: 100%;
+    padding-top: 5px;
+    padding-left: 0px;
+}
+
+.menu.navbar-change {
+ position: fixed;
+ z-index: 2;
+ width: 73%;
+ background-color: rgb(74, 180, 21);
 }
