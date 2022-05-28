@@ -34,8 +34,10 @@
             }
     },false)
 
+// Xử lý các hiệu ứng trong content bằng javascript:
 
 // Hieu ung cuon chuot
+
     document.addEventListener("DOMContentLoaded",function() {
         let navbar = document.querySelector('.menu');
         let mount_position = "lessthan100px";
@@ -44,10 +46,18 @@
         let banner_position = product_adv.offsetTop;
         let position_info = "below";
 
-        let displayRange = 300;         // khoảng cách hiển thị đối với banner được chọn
+        let displayRange = 300;                                        // Set khoảng cách hiển thị đối với banner được chọn
         let lowerLimit = banner_position + displayRange;
 
-        window.addEventListener('scroll',function(){   //tac dong voi thanh menu
+
+        let elementLoad = document.querySelector('.el6');            // phần tử được load lên phần content của web
+        let elementStatus = "below";
+        let toSlide = 300;                                             // Setup khoảng cách hiệu ứng
+        let elementLocation = elementLoad.offsetTop - 300 ;        // khoảng cách trượt của phần tử
+        
+        
+
+        window.addEventListener('scroll',function(){                   // tac dong voi thanh menu
             if  (this.window.pageYOffset > 100) {
                 if (mount_position == "lessthan100px") {
                     mount_position = "greaterthan100px";
@@ -77,5 +87,35 @@
                     product_adv.classList.remove('stop_banner');
                 }
             }
+
+
+
+
+
+
+
+        
+
+       // for ( i = 0; i < length.elementLoad; i++ ) {
+           
+            if  (this.window.pageYOffset > elementLocation) {                
+                    if (elementStatus == "below") {
+                        elementStatus = "upper";
+                        elementLoad.classList.add('show_El');
+                    }
+            }
+
+       
+
+        // } 
+        // else if (this.window.pageYOffset < banner_position ) {
+        //     if (position_info == "showing") {
+        //         position_info = "below";
+        //         product_adv.classList.remove('stop_banner');
+        //     }
+        // }
+
         })
+
+
     })

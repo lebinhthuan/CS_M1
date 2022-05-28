@@ -59,10 +59,10 @@
 .out_menu1 {
     opacity: 1;
     visibility: visible;
-    animation: up 0.1s forwards;
+    animation: move_Up 0.1s forwards;
 }
 
-@-webkit-keyframes up {
+@-webkit-keyframes move_Up {
     from{
         transform:translateY(200px);
         opacity:0;
@@ -93,7 +93,22 @@
     width: 350px;
     height: auto;
 }
-/* .product_info.stop_banner.img {
-    width: 300px;
-    height: auto;
-} */
+
+.el6 {
+    opacity: 0;
+}
+
+.el6.show_El {
+    animation: show_Up 1s ease forwards;
+}
+
+@-webkit-keyframes show_Up {
+    from {
+        transform: translateY(300px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
