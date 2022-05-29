@@ -1,10 +1,11 @@
 *{
     margin: 0;
     padding: 0;
-    html: 100%;
+    
 }
 
 html,body {
+    background-color: rgb(225, 240, 239);
     width: 100%;
     height: 100%;
 }
@@ -15,37 +16,46 @@ html,body {
 }
 
 .menu {
+    position: relative;
     width: 100%;
     height: 40px;
     background: aqua;  
     padding-left: 170px;
-    
+    transition: 0.5;
+    z-index: 4;
 }
 
 .block1 {
     float: left;
     position: relative;
+    z-index: 4;
    
 }
 
 .click1 {
     padding: 9px 20px;
-    transition: 0.4s;
+    transition: 0.5s;
     cursor: pointer;
+    z-index: 3;
+    padding-left: 80px;
 }
 
 .click1 i.fa {
     font-size: 15px;
+    z-index: 3;
     
 }
 
 .display_menu {
     position: absolute;
+    position: fixed;
     width: 250px;
     font-size: 15px;
-    transition: 0.1s;
+    transition: 0.5s;
     opacity: 0;
     visibility: hidden;
+    z-index: 4;
+    
 }
 
 .display_menu:after {
@@ -57,6 +67,7 @@ html,body {
     border: 11px rgba(255, 215, 0, 0) solid;
     border-bottom-color: rgb(239, 239, 8) ;
     left: 60px;
+    z-index: 3;
 }
 
 .violet {
@@ -66,7 +77,8 @@ html,body {
 .out_menu1 {
     opacity: 1;
     visibility: visible;
-    animation: move_Up 0.1s forwards;
+    animation: move_Up 0.8s forwards;
+    z-index: 3;
 }
 
 @-webkit-keyframes move_Up {
@@ -85,20 +97,33 @@ html,body {
     width: 100%;
     padding-top: 5px;
     padding-left: 0px;
+    margin-right: 0px;
+}
+
+.content_right {
+    top: 22px;
 }
 
 .menu.navbar-change {
-    width: 73%;
+    width: 100%;
     position: fixed;
-    z-index: 2;
+    z-index: 4;
     background-color: rgb(74, 180, 21);
 }
 
 .slide_play {
+    z-index: 4;
     text-align: center;
+    /* padding-top: 430px; */
+    position: absolute;
+    bottom: 2%;
+    left: 50%;
+    transform: translateX(-50%);
+
 }
 
 .slide_play ul {
+    
     display: inline;
 }
 
@@ -110,13 +135,102 @@ html,body {
     height: 20px;
     border-radius: 50%;
     margin: 20px 10px;
-    transition: 0.4s;
+    transition: 1s;
     cursor: pointer;
+    
+  
 }
 
 .slide_play ul li:hover,
 .slide_play ul li.button_active { 
-    background-color: brown;  
+    background-color: brown; 
+    z-index: 2; 
+}
+
+.slide_wrapper {
+    position: relative;
+    height: 500px;
+}
+.slides {
+    width: 600px;
+    height: 500px;
+    position: absolute;
+    z-index: 1;
+}
+
+.slides ul li {
+    height: 500px;
+    list-style: none;
+    position: absolute;
+    transition: 0.5s;
+    opacity: 0;
+
+
+
+}
+.slides ul li.layer1 {
+    position: relative;
+    
+}
+.bg2 .bg3 .bg4 {
+    width: 600px;
+    height: 600px; 
+    position: absolute; 
+    opacity: 0.4; 
+} 
+  
+.layer1 .bg2,
+.layer1 .bg3,
+.layer1 .bg4, 
+.layer1 .text_content {
+    opacity: 0.4;
+    position: absolute;
+    z-index: 1;
+    top: 30px;
+    margin-left: 10px;
+}
+.layer1 .text_content {
+    opacity: 1;   
+    z-index: 1;
+    top: 5px;
+    padding-left: 20px;
+    padding-top: 30px;
+}
+.slides ul li.active1 {
+    opacity: 1;
+}
+
+
+.text_content h2 {
+    font-size: 25;
+    font-weight:lighter;
+}
+.text_content small {
+    vertical-align: middle;
+    text-align: center;
+    font-size: 35;
+    font-weight:bold;
+    
+}
+.text_content .hr1 {
+    width: 100%;
+    height: 1px;
+    background-color: rgb(82, 105, 64);
+    margin: 15px 20px 0px 0px;
+}
+.text_content p {
+    margin-top: 12px;
+    font-size: 10;
+    font-weight:lighter;
+}
+.text_content .buttom2 {
+    color: rgb(95, 174, 177);
+    text-decoration: none;
+    border: 1px solid;
+    padding: 7px 15px;
+    margin: 8px 0 0 0;
+    display: inline-block;
+
 }
 
 .product_adv.stop_banner {
@@ -128,7 +242,10 @@ html,body {
 
 
 .el6 {
-    opacity: 0;
+    opacity: 0;   
+}
+.img-fluid {
+    padding: 10px;
 }
 
 .el6.show_El {
