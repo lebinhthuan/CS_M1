@@ -155,7 +155,10 @@ html,body {
     width: 600px;
     height: 500px;
     position: absolute;
-    z-index: 1;
+    z-index: 3;
+}
+.slides ul {
+    position: relative;
 }
 
 .slides ul li {
@@ -163,42 +166,73 @@ html,body {
     list-style: none;
     position: absolute;
     transition: 0.5s;
-    opacity: 0;
-
-
-
+    opacity: 0;   
 }
-.slides ul li.layer1 {
+
+.slides ul li.active1 {
+    margin-top: 30px;
+    margin-left: 10px; 
+    opacity: 1;   
+}
+
+.slides ul li.layer1 {  
+    
     position: relative;
     
 }
-.bg2 .bg3 .bg4 {
+
+
+.active1 .layer1 .bg4,
+.active1 .layer1 .bg5,
+.active1 .layer1 .bg6 {
+    opacity: 1;
+    position: absolute;
+    z-index: 2;
+}
+.bg4 .bg5 .bg6 {
+    padding-top:  100px;
     width: 600px;
     height: 600px; 
     position: absolute; 
-    opacity: 0.4; 
+    opacity: 0; 
 } 
   
+.layer1 .bg1,
 .layer1 .bg2,
-.layer1 .bg3,
-.layer1 .bg4, 
+.layer1 .bg3, 
 .layer1 .text_content {
-    opacity: 0.4;
+    opacity: 1;
     position: absolute;
     z-index: 1;
-    top: 30px;
-    margin-left: 10px;
+    top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.layer1 .bg1 {
+    opacity: 1;
+}
+
+.layer1 .bg2 {
+    opacity: 1;
+}
+
+.layer1 .bg3 {
+    opacity: 1;
+}
+
+.active1 .layer1 {
+    opacity: 1;
+    z-index: 1;
 }
 .layer1 .text_content {
     opacity: 1;   
-    z-index: 1;
+    z-index: 2;
     top: 5px;
     padding-left: 20px;
-    padding-top: 30px;
+    padding-top: 20px;
 }
-.slides ul li.active1 {
-    opacity: 1;
-}
+
 
 
 .text_content h2 {

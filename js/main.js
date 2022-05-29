@@ -123,12 +123,24 @@
     // Xu ly hieu ung cho slide
     document.addEventListener("DOMContentLoaded",function() {
         let button1 = document.querySelectorAll('.slide_play ul li');
+        let slideElement = document.querySelectorAll('.slides ul li');
             for (let m = 0; m < button1.length; m++) {
                 button1[m].addEventListener("click",function(){
                 for ( n = 0; n < button1.length; n++){
-                    button1[n].classList.remove('button_active')
+                    button1[n].classList.remove('button_active');
                     }
-                    this.classList.add('button_active')
+                    this.classList.add('button_active');
+
+                    let btn_active = this;
+                    let posi_btn = 0;
+                    for ( posi_btn = 0; btn_active = btn_active.previousElementSibling; posi_btn++ ) {}
+                          // vong lap xac dinh vi tri cua nut dc click thong qua ham phia tren
+                    for (let p = 0; p < slideElement.length; p++) {
+                        slideElement[p].classList.remove("active1");
+                        slideElement[posi_btn].classList.add("active1");
+                    }
+                 
+
                 })
             }      
     })
