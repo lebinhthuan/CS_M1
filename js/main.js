@@ -50,7 +50,7 @@
         let lowerLimit = banner_position + displayRange;
 
 
-        let elementLoad = document.querySelector('.el6');            // phần tử được load lên phần content của web
+        let elementLoad = document.querySelector('.el6');            // phần tử được load lên phần content của web        
         let elementStatus = "below";
         let toSlide = 300;                                             // Setup khoảng cách hiệu ứng
         let elementLocation = elementLoad.offsetTop - 300 ;        // khoảng cách trượt của phần tử
@@ -75,19 +75,19 @@
 
         window.addEventListener('scroll',function(){    //tac dong voi banner ben cot noi dung ben phai
             if  ((this.window.pageYOffset > banner_position) && (this.window.pageYOffset < lowerLimit)) {
-                if (position_info == "below") {
-                    position_info = "showing";
-                    product_adv.classList.add('stop_banner');
-                }
+                    if (position_info == "below") {
+                        position_info = "showing";
+                        product_adv.classList.add('stop_banner');
+                    }
 
-            } 
-            else if ((this.window.pageYOffset < banner_position ) || (this.window.pageYOffset > lowerLimit)){
-                if (position_info == "showing") {
-                    position_info = "below";
-                    product_adv.classList.remove('stop_banner');
+                } 
+                else if ((this.window.pageYOffset < banner_position ) || (this.window.pageYOffset > lowerLimit)){
+                    if (position_info == "showing") {
+                        position_info = "below";
+                        product_adv.classList.remove('stop_banner');
+                    }
                 }
-            }
-
+            // }) 
 
 
 
@@ -95,27 +95,40 @@
 
 
         
-
-       // for ( i = 0; i < length.elementLoad; i++ ) {
+        // window.addEventListener('scroll',function(){ 
+        //     for ( l = 0; l < elementLoad.length; l++ ) {
            
-            if  (this.window.pageYOffset > elementLocation) {                
+            if  (this.window.pageYOffset > elementLocation ) {                
                     if (elementStatus == "below") {
                         elementStatus = "upper";
                         elementLoad.classList.add('show_El');
                     }
-            }
+                }
+            // }
 
-       
-
-        // } 
+            })
         // else if (this.window.pageYOffset < banner_position ) {
         //     if (position_info == "showing") {
         //         position_info = "below";
         //         product_adv.classList.remove('stop_banner');
         //     }
-        // }
+        
 
-        })
+        
 
 
+    })
+
+
+    // Xu ly hieu ung cho slide
+    document.addEventListener("DOMContentLoaded",function() {
+        let button1 = document.querySelectorAll('.slide_play ul li');
+            for (let m = 0; m < button1.length; m++) {
+                button1[m].addEventListener("click",function(){
+                for ( n = 0; n < button1.length; n++){
+                    button1[n].classList.remove('button_active')
+                    }
+                    this.classList.add('button_active')
+                })
+            }      
     })
